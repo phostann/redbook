@@ -1,7 +1,7 @@
 package cc.phos.security;
 
-import cc.phos.response.BizCodeEnum;
-import cc.phos.response.R;
+import cc.phos.core.response.BizCodeEnum;
+import cc.phos.core.response.R;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

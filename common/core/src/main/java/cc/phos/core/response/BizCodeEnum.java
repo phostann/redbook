@@ -1,8 +1,5 @@
-package cc.phos.response;
+package cc.phos.core.response;
 
-import lombok.Getter;
-
-@Getter
 public enum BizCodeEnum {
     UN_AUTHORIZATION(10000, "用户未登录或已过期"),
     LOGIN_FAILED_EXCEPTION(10001, "登录失败"),
@@ -21,4 +18,11 @@ public enum BizCodeEnum {
         this.msg = msg;
     }
 
+    public int getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
 }

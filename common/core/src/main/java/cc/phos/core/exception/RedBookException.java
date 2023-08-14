@@ -1,6 +1,7 @@
-package cc.phos.exception;
+package cc.phos.core.exception;
 
-import cc.phos.response.BizCodeEnum;
+
+import cc.phos.core.response.BizCodeEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,4 +25,5 @@ public class RedBookException extends RuntimeException {
         this.code = code;
         this.msg = msg;
     }
+
 }

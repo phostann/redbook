@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
@@ -40,7 +41,5 @@ public class UserApplicationTests {
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         OffsetDateTime parse = OffsetDateTime.parse("2021-09-30T15:30:00+01:00");
         System.out.println(parse.toString());
-//        System.out.println(objectMapper.writeValueAsString(parse));
-
     }
 }

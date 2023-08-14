@@ -1,12 +1,11 @@
 package cc.phos.security;
 
-import cc.phos.response.BizCodeEnum;
-import cc.phos.response.R;
+import cc.phos.core.response.BizCodeEnum;
+import cc.phos.core.response.R;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;

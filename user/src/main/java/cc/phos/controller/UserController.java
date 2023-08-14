@@ -1,14 +1,11 @@
 package cc.phos.controller;
 
+import cc.phos.core.response.R;
 import cc.phos.entity.UserEntity;
-import cc.phos.exception.RedBookException;
 import cc.phos.mapper.UserMapper;
-import cc.phos.response.BizCodeEnum;
-import cc.phos.response.R;
 import cc.phos.service.RedisService;
 import cc.phos.utils.SmsUtil;
 import cc.phos.utils.IDUtil;
-import cc.phos.utils.TokenUtil;
 import cc.phos.vo.user.UpdateUserVO;
 import cc.phos.vo.user.UserRegisterVO;
 import jakarta.validation.Valid;
@@ -37,8 +34,6 @@ public class UserController {
         userEntity.setUsername(IDUtil.generateUserID());
         // 默认昵称
         userEntity.setNickname("用户" + userEntity.getMobile());
-        // 默认头像
-        userEntity.setAvatar("http://localhost:8081/images/default-avatar.jpeg");
         // 保存到数据库
         userMapper.insert(userEntity);
         return R.ok();
@@ -73,11 +68,4 @@ public class UserController {
         userMapper.updateById(userEntity);
         return R.ok();
     }
-
-    @GetMapping("/test")
-    public R test() {
-        log.info("test redis");
-        return R.ok();
-    }
-
 }

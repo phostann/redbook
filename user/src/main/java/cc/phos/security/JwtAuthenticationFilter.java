@@ -1,12 +1,10 @@
 package cc.phos.security;
 
 import cc.phos.entity.UserEntity;
-import cc.phos.mapper.UserMapper;
 import cc.phos.properties.AuthProperties;
 import cc.phos.security.mobile.MobileCodeAuthenticationToken;
 import cc.phos.service.RedisService;
 import cc.phos.utils.TokenUtil;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

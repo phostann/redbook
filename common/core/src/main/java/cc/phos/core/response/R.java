@@ -1,4 +1,4 @@
-package cc.phos.response;
+package cc.phos.core.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

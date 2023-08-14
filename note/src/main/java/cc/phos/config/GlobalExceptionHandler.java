@@ -9,6 +9,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.util.List;
 
@@ -35,5 +36,18 @@ public class GlobalExceptionHandler {
     public R handleConstraintViolationException(ConstraintViolationException ex) {
         log.error("参数校验失败: {}", ex.getMessage());
         return R.error(BizCodeEnum.VALID_FAILED_EXCEPTION, "参数校验失败: " + ex.getMessage());
+    }
+
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public R handleMethodArgumentNotValidException(MethodArgumentTypeMismatchException ex) {
+        log.error("参数校验失败: {}", ex.getMessage());
+        return R.error(BizCodeEnum.VALID_FAILED_EXCEPTION, "参数校验失败: " + ex.getMessage());
+    }
+
+    @ExceptionHandler(Exception.class)
+    public R handleException(Exception ex) {
+        log.error("未知异常: {}", ex.getMessage());
+        return R.error(BizCodeEnum.UNKNOWN_EXCEPTION, "未知异常: " + ex.getMessage());
     }
 }

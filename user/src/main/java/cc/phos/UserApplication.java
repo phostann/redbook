@@ -14,6 +14,5 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class UserApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(UserApplication.class, args);
-        System.out.println(applicationContext);
     }
 }
